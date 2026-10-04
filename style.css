@@ -150,6 +150,7 @@ button {
   height: 42px;
   background: none;
   color: var(--gold);
+  border: none;
   cursor: pointer
 }
 
