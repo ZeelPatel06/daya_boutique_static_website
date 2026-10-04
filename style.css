@@ -413,14 +413,19 @@ button {
 }
 
 .testimonial-viewport {
-  overflow: hidden
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.testimonial-viewport:active {
+  cursor: grabbing;
 }
 
 .testimonial-track {
   display: flex;
   transition: transform .4s ease;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
 }
 
 .testimonial-card {

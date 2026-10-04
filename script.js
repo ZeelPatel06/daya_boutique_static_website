@@ -1,133 +1,426 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Mobile navigation
+
+  // ==========================================
+  // MOBILE NAVIGATION
+  // ==========================================
+
   const menuToggle = document.getElementById("menuToggle");
   const navLinks = document.getElementById("navLinks");
 
   if (menuToggle && navLinks) {
+
     menuToggle.addEventListener("click", () => {
       const open = navLinks.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(open));
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(open)
+      );
     });
 
     navLinks.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
+
         navLinks.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
       });
     });
+
   }
 
-  // Mark the current page in navigation.
-  const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+
+  // ==========================================
+  // MARK CURRENT PAGE IN NAVIGATION
+  // ==========================================
+
+  const currentPath =
+    window.location.pathname.replace(/\/+$/, "") || "/";
+
   document.querySelectorAll(".nav-link").forEach(link => {
+
     const href = link.getAttribute("href");
+
     if (!href || href.startsWith("#")) return;
-    const target = new URL(href, window.location.href).pathname.replace(/\/+$/, "") || "/";
-    link.classList.toggle("active", target === currentPath);
+
+    const target =
+      new URL(
+        href,
+        window.location.href
+      ).pathname.replace(/\/+$/, "") || "/";
+
+    link.classList.toggle(
+      "active",
+      target === currentPath
+    );
+
   });
 
-  // Home gallery slider
-  const galleryTrack = document.getElementById("galleryTrack");
-  const galleryPrev = document.getElementById("galleryPrev");
-  const galleryNext = document.getElementById("galleryNext");
 
-  if (galleryTrack && galleryPrev && galleryNext) {
+  // ==========================================
+  // HOME GALLERY SLIDER
+  // ==========================================
+
+  const galleryTrack =
+    document.getElementById("galleryTrack");
+
+  const galleryPrev =
+    document.getElementById("galleryPrev");
+
+  const galleryNext =
+    document.getElementById("galleryNext");
+
+
+  if (
+    galleryTrack &&
+    galleryPrev &&
+    galleryNext
+  ) {
+
     const step = () => {
-      const card = galleryTrack.querySelector(".gallery-card");
-      return card ? card.getBoundingClientRect().width + 14 : 300;
+
+      const card =
+        galleryTrack.querySelector(".gallery-card");
+
+      return card
+        ? card.getBoundingClientRect().width + 14
+        : 300;
+
     };
+
 
     galleryPrev.addEventListener("click", () => {
-      galleryTrack.scrollBy({ left: -step(), behavior: "smooth" });
+
+      galleryTrack.scrollBy({
+        left: -step(),
+        behavior: "smooth"
+      });
+
     });
+
 
     galleryNext.addEventListener("click", () => {
-      galleryTrack.scrollBy({ left: step(), behavior: "smooth" });
+
+      galleryTrack.scrollBy({
+        left: step(),
+        behavior: "smooth"
+      });
+
     });
+
   }
 
-  // Testimonials: one card at a time.
-  // Arrows are positioned outside the card, exactly left/right.
-  const testimonialTrack = document.getElementById("testimonialTrack");
-  const testimonialPrev = document.getElementById("testimonialPrev");
-  const testimonialNext = document.getElementById("testimonialNext");
-  const dots = [...document.querySelectorAll(".dot")];
 
-  let testimonialIndex = 0;
+  // ==========================================
+// TESTIMONIALS
+// ==========================================
 
-  function showTestimonial(index) {
-    if (!testimonialTrack || dots.length === 0) return;
+const testimonialTrack =
+  document.getElementById("testimonialTrack");
 
-    testimonialIndex = (index + dots.length) % dots.length;
-    testimonialTrack.style.transform =
-      `translateX(-${testimonialIndex * 100}%)`;
+const testimonialPrev =
+  document.getElementById("testimonialPrev");
 
-    dots.forEach((dot, i) => {
-      dot.classList.toggle("active", i === testimonialIndex);
-    });
+const testimonialNext =
+  document.getElementById("testimonialNext");
+
+const dots =
+  [...document.querySelectorAll(".dot")];
+
+let testimonialIndex = 0;
+
+
+// ==========================================
+// SHOW TESTIMONIAL
+// ==========================================
+
+function showTestimonial(index) {
+
+  if (!testimonialTrack || dots.length === 0) {
+    return;
   }
 
-  if (testimonialPrev && testimonialNext) {
-    testimonialPrev.addEventListener("click", () => {
-      showTestimonial(testimonialIndex - 1);
-    });
+  testimonialIndex =
+    (index + dots.length) % dots.length;
 
-    testimonialNext.addEventListener("click", () => {
-      showTestimonial(testimonialIndex + 1);
-    });
-  }
+  testimonialTrack.style.transform =
+    `translateX(-${testimonialIndex * 100}%)`;
 
-  dots.forEach(dot => {
-    dot.addEventListener("click", () => {
-      showTestimonial(Number(dot.dataset.index));
-    });
+  dots.forEach((dot, i) => {
+
+    dot.classList.toggle(
+      "active",
+      i === testimonialIndex
+    );
+
   });
 
-  // Optional auto-slide; pause when the user interacts with the section.
-  const testimonialSlider = document.querySelector(".testimonial-slider");
+}
 
-  if (testimonialSlider && testimonialTrack && dots.length > 1) {
-    let timer = setInterval(() => {
-      showTestimonial(testimonialIndex + 1);
-    }, 5500);
 
-    const pause = () => clearInterval(timer);
-    const resume = () => {
-      clearInterval(timer);
-      timer = setInterval(() => {
-        showTestimonial(testimonialIndex + 1);
-      }, 5500);
-    };
+// ==========================================
+// ARROWS
+// ==========================================
 
-    testimonialSlider.addEventListener("mouseenter", pause);
-    testimonialSlider.addEventListener("mouseleave", resume);
-    testimonialSlider.addEventListener("touchstart", pause, { passive: true });
-  }
+if (testimonialPrev && testimonialNext) {
 
-  // Basic drag scrolling for the home gallery.
-  if (galleryTrack) {
-    let dragging = false;
-    let startX = 0;
-    let startScroll = 0;
+  testimonialPrev.addEventListener("click", () => {
 
-    galleryTrack.addEventListener("pointerdown", event => {
-      dragging = true;
-      startX = event.clientX;
-      startScroll = galleryTrack.scrollLeft;
-      galleryTrack.setPointerCapture(event.pointerId);
-    });
+    showTestimonial(testimonialIndex - 1);
 
-    galleryTrack.addEventListener("pointermove", event => {
-      if (!dragging) return;
-      galleryTrack.scrollLeft =
-        startScroll - (event.clientX - startX);
-    });
+  });
 
-    ["pointerup", "pointercancel", "pointerleave"].forEach(type => {
-      galleryTrack.addEventListener(type, () => {
-        dragging = false;
-      });
-    });
-  }
+  testimonialNext.addEventListener("click", () => {
+
+    showTestimonial(testimonialIndex + 1);
+
+  });
+
+}
+
+
+// ==========================================
+// DOTS
+// ==========================================
+
+dots.forEach(dot => {
+
+  dot.addEventListener("click", () => {
+
+    showTestimonial(
+      Number(dot.dataset.index)
+    );
+
+  });
+
+});
+
+
+// ==========================================
+// TESTIMONIAL TOUCH / SWIPE
+// ==========================================
+
+const testimonialViewport =
+  document.querySelector(".testimonial-viewport");
+
+let touchStartX = 0;
+let touchStartY = 0;
+let isTouching = false;
+
+
+// ==========================================
+// AUTO SLIDER CONTROL
+// ==========================================
+
+const testimonialSlider =
+  document.querySelector(".testimonial-slider");
+
+let testimonialTimer = null;
+let testimonialResumeTimer = null;
+
+
+function startTestimonialAutoSlide() {
+
+  clearInterval(testimonialTimer);
+
+  testimonialTimer = setInterval(() => {
+
+    showTestimonial(
+      testimonialIndex + 1
+    );
+
+  }, 5500);
+
+}
+
+
+function stopTestimonialAutoSlide() {
+
+  clearInterval(testimonialTimer);
+
+  testimonialTimer = null;
+
+}
+
+
+function resumeTestimonialAutoSlide() {
+
+  clearTimeout(testimonialResumeTimer);
+
+  testimonialResumeTimer = setTimeout(() => {
+
+    startTestimonialAutoSlide();
+
+  }, 1000);
+
+}
+
+
+// ==========================================
+// TOUCH START
+// ==========================================
+
+if (testimonialViewport) {
+
+  testimonialViewport.addEventListener(
+    "touchstart",
+    (event) => {
+
+      // Stop auto slider immediately
+      stopTestimonialAutoSlide();
+
+      // Cancel previous resume
+      clearTimeout(testimonialResumeTimer);
+
+      isTouching = true;
+
+      touchStartX =
+        event.touches[0].clientX;
+
+      touchStartY =
+        event.touches[0].clientY;
+
+    },
+    { passive: true }
+  );
+
+
+  // ==========================================
+  // TOUCH END
+  // ==========================================
+
+  testimonialViewport.addEventListener(
+    "touchend",
+    (event) => {
+
+      if (!isTouching) {
+        return;
+      }
+
+      isTouching = false;
+
+
+      const touchEndX =
+        event.changedTouches[0].clientX;
+
+      const touchEndY =
+        event.changedTouches[0].clientY;
+
+
+      const distanceX =
+        touchStartX - touchEndX;
+
+      const distanceY =
+        touchStartY - touchEndY;
+
+
+      // Only treat horizontal movement
+      // as a testimonial swipe
+      if (
+        Math.abs(distanceX) >
+        Math.abs(distanceY)
+      ) {
+
+        // Minimum swipe distance
+        if (Math.abs(distanceX) >= 50) {
+
+          // Swipe LEFT → NEXT
+          if (distanceX > 0) {
+
+            showTestimonial(
+              testimonialIndex + 1
+            );
+
+          }
+
+          // Swipe RIGHT → PREVIOUS
+          else {
+
+            showTestimonial(
+              testimonialIndex - 1
+            );
+
+          }
+
+        }
+
+      }
+
+
+      // Restart auto slider after 1 second
+      resumeTestimonialAutoSlide();
+
+    },
+    { passive: true }
+  );
+
+
+  // ==========================================
+  // TOUCH CANCEL
+  // ==========================================
+
+  testimonialViewport.addEventListener(
+    "touchcancel",
+    () => {
+
+      isTouching = false;
+
+      resumeTestimonialAutoSlide();
+
+    },
+    { passive: true }
+  );
+
+}
+
+
+// ==========================================
+// MOUSE HOVER
+// ==========================================
+
+if (testimonialSlider) {
+
+  testimonialSlider.addEventListener(
+    "mouseenter",
+    () => {
+
+      stopTestimonialAutoSlide();
+
+      clearTimeout(
+        testimonialResumeTimer
+      );
+
+    }
+  );
+
+
+  testimonialSlider.addEventListener(
+    "mouseleave",
+    () => {
+
+      resumeTestimonialAutoSlide();
+
+    }
+  );
+
+}
+
+
+// ==========================================
+// START AUTO SLIDER
+// ==========================================
+
+if (
+  testimonialTrack &&
+  dots.length > 1
+) {
+
+  startTestimonialAutoSlide();
+
+}
+
 });
