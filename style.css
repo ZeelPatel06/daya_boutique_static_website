@@ -149,7 +149,6 @@ button {
   width: 42px;
   height: 42px;
   background: none;
-  border: 1px solid var(--border);
   color: var(--gold);
   cursor: pointer
 }
