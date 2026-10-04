@@ -418,7 +418,9 @@ button {
 
 .testimonial-track {
   display: flex;
-  transition: transform .4s ease
+  transition: transform .4s ease;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
 .testimonial-card {
@@ -844,7 +846,7 @@ button {
     flex-basis: calc((100% - 28px)/3)
   }
 
-  .slider-btn{
+  .slider-btn {
     display: none;
   }
 
