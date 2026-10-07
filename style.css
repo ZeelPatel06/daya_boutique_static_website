@@ -72,12 +72,13 @@ button {
 .brand {
   display: flex;
   align-items: center;
-  gap: 11px
+  gap: 11px;
 }
 
 .brand-mark {
-  width: 46px;
-  height: 46px;
+  border-radius: 100%;
+  width: 5rem;
+  height: 5rem;
   display: grid;
   place-items: center
 }
@@ -204,7 +205,7 @@ button {
   border: 1px solid var(--gold);
   border-radius: 0.5rem;
   padding: 13px 18px;
-  color: var(--cream);
+  color: goldenrod;
   font-size: 1rem;
   letter-spacing: .16em;
   text-transform: uppercase;
@@ -244,7 +245,7 @@ button {
 .hero-image img {
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: top;
   filter: saturate(.82)
 }
 
@@ -255,7 +256,7 @@ button {
 .hero-content {
   position: relative;
   z-index: 2;
-  padding-bottom: 80px
+  padding-bottom: 80px;
 }
 
 .hero h1 {
@@ -354,6 +355,850 @@ button {
   transform: translateY(-50%)
 }
 
+/* =========================================================
+   DAYA BOUTIQUE
+   GALLERY PAGE
+========================================================= */
+
+
+/* =========================================================
+   GALLERY HERO
+========================================================= */
+
+.gallery-hero {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #111;
+}
+
+.gallery-hero img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter: brightness(0.65);
+}
+
+.gallery-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.72),
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.18)
+    );
+}
+
+.gallery-hero-content {
+  position: relative;
+  z-index: 2;
+
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  max-width: 900px;
+}
+
+.gallery-hero-content h1 {
+  margin: 14px 0 20px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(60px, 8vw, 110px);
+  line-height: 0.9;
+
+  font-weight: 600;
+
+  color: #fff;
+}
+
+.gallery-hero-content p {
+  max-width: 580px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   GALLERY INTRO
+========================================================= */
+
+.gallery-intro {
+  padding: 110px 7%;
+}
+
+.gallery-intro-container {
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 100px;
+
+  align-items: center;
+}
+
+.gallery-intro-heading {
+  position: relative;
+}
+
+.gallery-intro-heading::before {
+  content: "";
+
+  position: absolute;
+
+  left: -35px;
+  top: 8px;
+
+  width: 2px;
+  height: 85px;
+
+  background: goldenrod;
+}
+
+.gallery-intro-heading h2 {
+  margin: 15px 0 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(48px, 5vw, 72px);
+
+  line-height: 0.95;
+
+  font-weight: 600;
+
+  color: #fff;
+}
+
+.gallery-intro-content {
+  max-width: 560px;
+}
+
+.gallery-intro-content p {
+  margin: 0 0 22px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.gallery-intro-content p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.gallery-section-heading {
+  max-width: 1250px;
+
+  margin: 0 auto 60px;
+
+  padding: 0 7%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 35px;
+
+  text-align: center;
+}
+
+.gallery-section-heading .heading-line {
+  flex: 1;
+
+  max-width: 180px;
+
+  height: 1px;
+
+  background: rgba(218, 165, 32, 0.4);
+}
+
+.gallery-section-heading h2 {
+  margin: 12px 0 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(42px, 5vw, 62px);
+
+  line-height: 1;
+
+  color: #fff;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   GALLERY COLLECTIONS
+========================================================= */
+
+.gallery-collections {
+  padding: 20px 0 120px;
+}
+
+.gallery-grid {
+  width: min(1250px, 86%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 24px;
+}
+
+
+/* =========================================================
+   CATEGORY CARD
+========================================================= */
+
+.gallery-category {
+  position: relative;
+
+  margin: 0;
+
+  height: 500px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  background: #1a1a1a;
+}
+
+.gallery-category.gallery-large {
+  height: 620px;
+}
+
+.gallery-category img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s ease,
+    filter 0.7s ease;
+}
+
+.gallery-category:hover img {
+  transform: scale(1.06);
+
+  filter: brightness(0.8);
+}
+
+
+/* =========================================================
+   CATEGORY OVERLAY
+========================================================= */
+
+.category-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  padding: 42px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.78),
+      rgba(0, 0, 0, 0.18) 60%,
+      transparent
+    );
+
+  transition: background 0.5s ease;
+}
+
+.gallery-category:hover .category-overlay {
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.84),
+      rgba(0, 0, 0, 0.25) 65%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   CATEGORY CONTENT
+========================================================= */
+
+.category-content {
+  position: relative;
+
+  transform: translateY(8px);
+
+  transition: transform 0.5s ease;
+}
+
+.gallery-category:hover .category-content {
+  transform: translateY(0);
+}
+
+.category-number {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: goldenrod;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+.category-content h3 {
+  margin: 0 0 8px;
+
+  color: #fff;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(38px, 4vw, 52px);
+
+  line-height: 0.95;
+
+  font-weight: 600;
+}
+
+.category-content p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   EXPERIENCE SECTION
+========================================================= */
+
+.gallery-experience {
+  padding: 120px 7%;
+
+  background: #0d0d0d;
+}
+
+.gallery-experience-container {
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1.1fr 0.9fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+.gallery-experience-image {
+  height: 600px;
+
+  overflow: hidden;
+}
+
+.gallery-experience-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.6s ease;
+}
+
+.gallery-experience-image:hover img {
+  transform: scale(1.04);
+}
+
+.gallery-experience-content {
+  max-width: 500px;
+}
+
+.gallery-experience-content h2 {
+  margin: 18px 0 25px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(52px, 5vw, 76px);
+
+  line-height: 0.9;
+
+  color: #fff;
+
+  font-weight: 600;
+}
+
+.gallery-experience-content p {
+  margin: 0 0 30px;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   EXPERIENCE BUTTON
+========================================================= */
+
+.gallery-experience-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 23px;
+
+  border: 1px solid goldenrod;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.gallery-experience-btn i {
+  font-size: 17px;
+
+  transition: transform 0.3s ease;
+}
+
+.gallery-experience-btn:hover {
+  background: goldenrod;
+
+  color: #111;
+}
+
+.gallery-experience-btn:hover i {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   CTA SECTION
+========================================================= */
+
+.gallery-cta {
+  position: relative;
+
+  padding: 130px 7%;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.82),
+      rgba(0, 0, 0, 0.82)
+    ),
+    url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1800&q=85")
+    center / cover no-repeat;
+}
+
+.gallery-cta-content {
+  max-width: 700px;
+
+  margin: 0 auto;
+}
+
+.gallery-cta h2 {
+  margin: 18px 0 20px;
+
+  color: #fff;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(52px, 6vw, 82px);
+
+  line-height: 0.9;
+
+  font-weight: 600;
+}
+
+.gallery-cta p {
+  max-width: 500px;
+
+  margin: 0 auto 30px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.gallery-cta-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px 28px;
+
+  background: goldenrod;
+
+  color: #111;
+
+  text-decoration: none;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.gallery-cta-btn i {
+  font-size: 17px;
+
+  transition: transform 0.3s ease;
+}
+
+.gallery-cta-btn:hover {
+  background: #fff;
+
+  transform: translateY(-2px);
+}
+
+.gallery-cta-btn:hover i {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   FOOTER ICONS
+========================================================= */
+
+.footer-socials a i {
+  color: goldenrod;
+
+  font-size: 1rem;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer-socials a:hover i {
+  color: #fff;
+
+  transform: translateY(-2px);
+}
+
+.footer-contact .contact-item i {
+  color: goldenrod;
+
+  font-size: 1.3rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .gallery-hero {
+    min-height: 500px;
+  }
+
+  .gallery-intro-container {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .gallery-intro-heading {
+    max-width: 650px;
+  }
+
+  .gallery-experience-container {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .gallery-experience-content {
+    max-width: 650px;
+  }
+
+  .gallery-experience-image {
+    height: 520px;
+  }
+
+  .gallery-category {
+    height: 450px;
+  }
+
+  .gallery-category.gallery-large {
+    height: 550px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .gallery-hero {
+    min-height: 470px;
+  }
+
+  .gallery-hero-content {
+    padding-top: 80px;
+
+    padding-bottom: 80px;
+  }
+
+  .gallery-hero-content h1 {
+    font-size: 64px;
+  }
+
+  .gallery-hero-content p {
+    max-width: 90%;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+
+  /* INTRO */
+
+  .gallery-intro {
+    padding: 80px 7%;
+  }
+
+  .gallery-intro-container {
+    gap: 35px;
+  }
+
+  .gallery-intro-heading::before {
+    left: -18px;
+
+    height: 65px;
+  }
+
+  .gallery-intro-heading h2 {
+    font-size: 48px;
+  }
+
+
+  /* SECTION HEADING */
+
+  .gallery-section-heading {
+    gap: 15px;
+
+    padding: 0 5%;
+
+    margin-bottom: 40px;
+  }
+
+  .gallery-section-heading .heading-line {
+    max-width: 45px;
+  }
+
+  .gallery-section-heading h2 {
+    font-size: 42px;
+  }
+
+
+  /* GRID */
+
+  .gallery-grid {
+    width: 90%;
+
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .gallery-category,
+  .gallery-category.gallery-large {
+    height: 470px;
+  }
+
+
+  /* OVERLAY */
+
+  .category-overlay {
+    padding: 28px;
+  }
+
+  .category-content h3 {
+    font-size: 44px;
+  }
+
+  .category-content p {
+    font-size: 11px;
+  }
+
+
+  /* EXPERIENCE */
+
+  .gallery-experience {
+    padding: 80px 7%;
+  }
+
+  .gallery-experience-container {
+    gap: 40px;
+  }
+
+  .gallery-experience-image {
+    height: 420px;
+  }
+
+  .gallery-experience-content h2 {
+    font-size: 55px;
+  }
+
+
+  /* CTA */
+
+  .gallery-cta {
+    padding: 90px 7%;
+  }
+
+  .gallery-cta h2 {
+    font-size: 55px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .gallery-hero {
+    min-height: 430px;
+  }
+
+  .gallery-hero-content h1 {
+    font-size: 55px;
+  }
+
+  .gallery-intro-heading h2 {
+    font-size: 42px;
+  }
+
+  .gallery-section-heading h2 {
+    font-size: 36px;
+  }
+
+  .gallery-category,
+  .gallery-category.gallery-large {
+    height: 410px;
+  }
+
+  .category-content h3 {
+    font-size: 38px;
+  }
+
+  .gallery-experience-image {
+    height: 350px;
+  }
+
+  .gallery-experience-content h2 {
+    font-size: 48px;
+  }
+
+  .gallery-cta h2 {
+    font-size: 48px;
+  }
+
+}
+
 /* SMALLER THIRD SECTION */
 .about-preview {
   display: grid;
@@ -401,108 +1246,129 @@ button {
   margin-bottom: 18px
 }
 
-/* TESTIMONIALS */
-.testimonials {
-  padding-bottom: 65px
+/* Daya Boutique Experience */
+/* ==========================================
+   BOUTIQUE EXPERIENCE
+   ========================================== */
+
+.boutique-experience {
+  margin: 5rem;
+  background: #070706;
 }
 
-.testimonial-slider {
-  position: relative;
-  width: min(calc(100% - 100px), 1000px);
-  margin: auto
-}
-
-.testimonial-viewport {
-  overflow: hidden;
-  cursor: grab;
-  user-select: none;
-  touch-action: pan-y;
-}
-
-.testimonial-viewport:active {
-  cursor: grabbing;
-}
-
-.testimonial-track {
-  display: flex;
-  transition: transform .4s ease;
-}
-
-.testimonial-card {
-  flex: 0 0 100%;
-  min-height: 215px;
+.boutique-experience-container {
+  box-shadow: 5px 5px 5px 10px rgba(216, 168, 62, .60);
   border: 1px solid var(--border);
   border-radius: 1rem;
-  padding: 28px 55px;
-  background: linear-gradient(145deg, rgba(216, 168, 62, .05), transparent 50%)
-}
+  max-width: 1200px;
+  margin: 0 auto;
 
-.customer {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
-  gap: 14px
+  gap: 70px;
 }
 
-.customer img {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
+/* Image */
+
+.boutique-experience-image {
+  width: 100%;
+  height: 520px;
+  overflow: hidden;
+  border-radius: 1.1rem;
+  padding-left: 0.1rem;
+}
+
+.boutique-experience-image img {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 1px solid var(--gold)
-}
-
-.customer strong {
   display: block;
-  color: var(--cream);
-  font-size: 1.5rem;
-  margin-top: 5px
+  transition: transform 0.5s ease;
 }
 
-.stars {
-  color: var(--gold-light);
-  letter-spacing: 2px;
-  font-size: 1.5rem
+
+/* Content */
+
+.boutique-experience-content {
+  max-width: 500px;
 }
 
-.testimonial-card p {
-  margin-top: 24px;
-  color: #ddd7cb;
-  font: 500 21px/1.45 "Cormorant Garamond", serif;
-  font-size: 1.5rem;
+.boutique-experience-content .eyebrow {
+  display: inline-block;
+  margin-bottom: 15px;
 }
 
-.testimonial-slider>.testimonial-prev {
-  left: -52px;
-  top: 50%;
-  transform: translateY(-50%)
+.boutique-experience-content h2 {
+  margin: 0 0 25px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 1.05;
+  font-weight: 500;
+  color: #f3f3f3;
 }
 
-.testimonial-slider>.testimonial-next {
-  right: -52px;
-  top: 50%;
-  transform: translateY(-50%)
+.boutique-experience-content p {
+  margin: 0 0 30px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #aaaaaa;
 }
 
-.testimonial-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 20px
+
+/* Button */
+
+.boutique-experience-btn {
+  display: inline-block;
+  padding: 13px 28px;
+  border: 1px solid #222;
+  border-radius: 1rem;
+  color: #f3f3f3;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  transition: all 0.3s ease;
 }
 
-.dot {
-  width: 7px;
-  height: 7px;
-  border: 0;
-  border-radius: 50%;
-  background: #57544d;
-  cursor: pointer
+.boutique-experience-btn:hover {
+  background: #222;
+  color: #fff;
 }
 
-.dot.active {
-  width: 23px;
-  border-radius: 10px;
-  background: var(--gold)
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 768px) {
+
+  .boutique-experience {
+    padding: 70px 6%;
+  }
+
+  .boutique-experience-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .boutique-experience-image {
+    height: 400px;
+  }
+
+  .boutique-experience-content {
+    max-width: 100%;
+  }
+
+  .boutique-experience-content h2 {
+    font-size: 42px;
+  }
+
 }
 
 /* PAGE HERO FOR INNER PAGES */
@@ -510,7 +1376,7 @@ button {
   min-height: 360px;
   display: flex;
   align-items: flex-end;
-  position: relative;
+  /* position: relative; */
   overflow: hidden
 }
 
@@ -542,6 +1408,76 @@ button {
 }
 
 /* GALLERY PAGE */
+
+/* ==========================================
+   GALLERY CATEGORY OVERLAY
+   ========================================== */
+
+.gallery-category {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-category img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.category-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 28px 20px;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.05) 65%,
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+.category-overlay span {
+  color: #fff;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Image zoom on hover */
+
+.gallery-category:hover img {
+  transform: scale(1.05);
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 600px) {
+
+  .category-overlay {
+    padding: 20px 15px;
+  }
+
+  .category-overlay span {
+    font-size: 25px;
+  }
+
+}
+
 .full-gallery {
   padding: 65px 0 85px
 }
@@ -576,101 +1512,1072 @@ button {
 }
 
 /* ABOUT PAGE */
-.inner-section {
-  padding: 70px 0
+/* ==========================================
+   ABOUT PAGE
+   ========================================== */
+
+
+/* ==========================================
+   ABOUT HERO
+   ========================================== */
+
+.about-page-hero {
+  position: relative;
+  height: 620px;
+  overflow: hidden;
 }
 
-.about-page-grid {
-  width: min(calc(100% - 40px), 1100px);
+.about-page-hero > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-page-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.68),
+      rgba(0, 0, 0, 0.15)
+    );
+}
+
+.about-page-hero-content {
+  position: absolute;
+  left: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+
+  max-width: 650px;
+  color: #fff;
+}
+
+.about-page-hero-content h1 {
+  margin: 15px 0 20px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(55px, 7vw, 90px);
+  font-weight: 500;
+  line-height: 0.95;
+}
+
+.about-page-hero-content h1 em {
+  font-weight: 500;
+}
+
+.about-page-hero-content p {
+  max-width: 480px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+
+/* ==========================================
+   STORY
+   ========================================== */
+
+.about-story-section {
+  padding: 110px 7%;
+  background: #f8f5ef;
+}
+
+.about-story-container {
+  max-width: 1200px;
   margin: auto;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 45px;
-  align-items: center
+  align-items: center;
+
+  gap: 80px;
 }
 
-.about-page-grid img {
-  height: 520px;
+.about-story-image {
+  height: 600px;
+  overflow: hidden;
+}
+
+.about-story-image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border: 1px solid var(--border)
 }
 
-.about-page-copy h2 {
-  font: 600 clamp(42px, 5vw, 64px)/.88 "Cormorant Garamond", serif;
-  color: var(--cream);
-  margin: 14px 0 20px
+.about-story-content {
+  max-width: 530px;
+  color: #070706;
 }
 
-.about-page-copy p {
-  color: #c4bfb5;
-  font-size: 13px;
+.about-story-content h2 {
+  margin: 15px 0 20px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(48px, 5vw, 68px);
+  line-height: 0.98;
+  font-weight: 500;
+}
+
+.about-ornament {
+  display: block;
+  margin-bottom: 25px;
+
+  color: goldenrod;
+  letter-spacing: 3px;
+}
+
+.about-story-content p {
+  color: #373737;
+
+  font-size: 15px;
   line-height: 1.9;
-  margin-bottom: 15px
+
+  margin-bottom: 18px;
 }
 
-/* CONTACT PAGE */
+
+
+/* ==========================================
+   SECTION HEADING
+   ========================================== */
+
+.about-section-heading {
+  max-width: 760px;
+  margin: 0 auto 65px;
+
+  text-align: center;
+}
+
+.about-section-heading h2 {
+  margin: 15px 0 20px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(48px, 6vw, 72px);
+  line-height: 0.95;
+  font-weight: 500;
+}
+
+.about-section-heading p {
+  max-width: 620px;
+  margin: 0 auto;
+
+  color: #aaa;
+
+  line-height: 1.8;
+}
+
+
+
+/* ==========================================
+   STYLE SECTION
+   ========================================== */
+
+.about-style-section {
+  padding: 110px 7%;
+}
+
+.about-style-grid {
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.about-style-card {
+  padding: 45px 40px;
+
+  text-align: center;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.about-style-card:last-child {
+  border-right: none;
+}
+
+.about-style-icon {
+  width: 65px;
+  height: 65px;
+
+  margin: 0 auto 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(218, 165, 32, 0.5);
+
+  border-radius: 50%;
+
+  color: goldenrod;
+
+  font-size: 25px;
+}
+
+.about-style-card h3 {
+  margin-bottom: 15px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.about-style-card p {
+  color: #aaa;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+
+/* ==========================================
+   WHAT WE OFFER
+   ========================================== */
+
+.about-offer-section {
+  padding: 110px 7%;
+  background: #f8f5ef;
+}
+
+.about-offer-container {
+  max-width: 1150px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+
+  gap: 90px;
+
+  align-items: start;
+}
+
+.about-offer-content h2 {
+  margin: 15px 0 25px;
+  color: #070706;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(48px, 5vw, 68px);
+  line-height: 0.95;
+  font-weight: 500;
+}
+
+.about-offer-content p {
+  color: #373737;
+
+  font-size: 15px;
+  line-height: 1.9;
+
+  margin-bottom: 18px;
+}
+
+.about-offer-list {
+  border-top: 1px solid #ddd;
+}
+
+.offer-item {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+
+  gap: 25px;
+
+  padding: 28px 0;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.offer-number {
+  color: goldenrod;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 24px;
+}
+
+.offer-item h3 {
+  margin: 0 0 7px;
+
+  font-family: "Cormorant Garamond", serif;
+  color: #070706;
+
+  font-size: 27px;
+
+  font-weight: 500;
+}
+
+.offer-item p {
+  margin: 0;
+
+  color: #373737;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+
+/* ==========================================
+   PHILOSOPHY
+   ========================================== */
+
+.about-philosophy {
+  position: relative;
+
+  min-height: 520px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 80px 7%;
+
+  background-image:
+    url("images/daya_boutique_interior1.jpeg");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.about-philosophy-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.about-philosophy-content {
+  position: relative;
+
+  max-width: 800px;
+
+  text-align: center;
+
+  color: #fff;
+}
+
+.about-philosophy-content h2 {
+  margin: 20px 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(48px, 6vw, 76px);
+
+  line-height: 0.95;
+
+  font-weight: 500;
+}
+
+.about-philosophy-content p {
+  max-width: 550px;
+
+  margin: auto;
+
+  color: #ddd;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+
+/* ==========================================
+   EXPERIENCE
+   ========================================== */
+
+.about-experience-section {
+  padding: 110px 7%;
+
+  background: #f8f5ef;
+}
+
+.about-experience-container {
+  max-width: 1150px;
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+.about-experience-image {
+  height: 560px;
+
+  overflow: hidden;
+}
+
+.about-experience-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.about-experience-content {
+  max-width: 500px;
+  color: #070706;
+}
+
+.about-experience-content h2 {
+  margin: 15px 0 20px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(48px, 5vw, 68px);
+
+  line-height: 0.95;
+
+  font-weight: 500;
+}
+
+.about-experience-content p {
+  color: #373737;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+
+  margin-bottom: 15px;
+}
+
+
+
+/* ==========================================
+   WHY DAYA
+   ========================================== */
+
+.why-daya-section {
+  padding: 110px 7%;
+}
+
+.why-daya-grid {
+  max-width: 1100px;
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.why-daya-item {
+  padding: 30px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.why-daya-item:last-child {
+  border-right: none;
+}
+
+.why-daya-number {
+  display: block;
+
+  margin-bottom: 25px;
+
+  color: goldenrod;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 25px;
+}
+
+.why-daya-item h3 {
+  margin-bottom: 12px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 28px;
+
+  font-weight: 500;
+}
+
+.why-daya-item p {
+  color: #cecdcd;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+/* ==========================================
+   FINAL CTA
+   ========================================== */
+
+.about-final-cta {
+  padding: 110px 7%;
+
+  text-align: center;
+}
+
+.about-final-cta h2 {
+  margin: 20px 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(52px, 7vw, 86px);
+
+  line-height: 0.9;
+
+  font-weight: 500;
+}
+
+.about-final-cta p {
+  max-width: 600px;
+
+  margin: 0 auto 30px;
+
+  color: #aaa;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 900px) {
+
+  .about-story-container,
+  .about-offer-container,
+  .about-experience-container,
+  .about-visit-container {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+
+  .about-story-image,
+  .about-experience-image,
+  .about-visit-image {
+    height: 450px;
+  }
+
+
+  .about-style-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-style-card {
+    border-right: none;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .about-style-card:last-child {
+    border-bottom: none;
+  }
+
+
+  .why-daya-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .why-daya-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .why-daya-item:nth-child(3),
+  .why-daya-item:nth-child(4) {
+    border-top:
+      1px solid rgba(255, 255, 255, 0.12);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .about-page-hero {
+    height: 520px;
+  }
+
+  .about-page-hero-content {
+    left: 7%;
+    right: 7%;
+  }
+
+
+  .about-story-section,
+  .about-style-section,
+  .about-offer-section,
+  .about-experience-section,
+  .why-daya-section,
+  .about-visit-section {
+    padding: 75px 6%;
+  }
+
+
+  .about-story-image,
+  .about-experience-image,
+  .about-visit-image {
+    height: 380px;
+  }
+
+
+  .why-daya-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-daya-item {
+    border-right: none;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .why-daya-item:nth-child(3),
+  .why-daya-item:nth-child(4) {
+    border-top: none;
+  }
+
+  .why-daya-item:last-child {
+    border-bottom: none;
+  }
+
+
+  .offer-item {
+    grid-template-columns: 50px 1fr;
+  }
+
+}
+
+/* ==========================================
+   CONTACT PAGE
+   ========================================== */
+
+
+/* ==========================================
+   PAGE HERO
+   ========================================== */
+
+.page-hero {
+  position: relative;
+
+  height: 520px;
+
+  overflow: hidden;
+}
+
+.page-hero > img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.68),
+      rgba(0, 0, 0, 0.15)
+    );
+}
+
+.page-hero-content {
+  position: absolute;
+
+  left: 8%;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #fff;
+}
+
+.page-hero-content h1 {
+  margin: 15px 0 15px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(55px, 7vw, 90px);
+
+  font-weight: 500;
+
+  line-height: 0.95;
+}
+
+.page-hero-content p {
+  margin: 0;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 15px;
+
+  color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* ==========================================
+   CONTACT MAIN
+   ========================================== */
+
 .contact-page {
-  padding: 70px 0 90px
+  padding: 110px 7%;
 }
 
 .contact-grid {
-  width: min(calc(100% - 40px), 1100px);
-  margin: auto;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
   display: grid;
-  grid-template-columns: .85fr 1.15fr;
-  gap: 35px
+
+  grid-template-columns:
+    0.9fr 1.1fr;
+
+  gap: 70px;
+
+  align-items: stretch;
 }
 
+
+/* ==========================================
+   CONTACT CARD
+   ========================================== */
+
 .contact-card {
-  border: 1px solid var(--border);
-  padding: 35px;
-  background: linear-gradient(145deg, rgba(216, 168, 62, .05), transparent)
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 30px 0;
 }
 
 .contact-card h2 {
-  font: 600 43px/1 "Cormorant Garamond", serif;
-  color: var(--cream);
-  margin: 12px 0 25px
+  margin: 15px 0 20px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(48px, 5vw, 68px);
+
+  font-weight: 500;
+
+  line-height: 0.95;
 }
+
+.contact-intro {
+  max-width: 480px;
+
+  margin: 0 0 30px;
+
+  color: #aaa;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+}
+
+
+/* ==========================================
+   CONTACT LINE
+   ========================================== */
 
 .contact-line {
   display: flex;
-  gap: 14px;
-  margin: 20px 0
+
+  align-items: flex-start;
+
+  gap: 18px;
+
+  padding: 18px 0;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.12);
 }
 
-.contact-line .icon {
-  color: var(--gold);
-  width: 22px
+.contact-line > i {
+  flex-shrink: 0;
+
+  width: 25px;
+
+  margin-top: 2px;
+
+  color: goldenrod;
+
+  font-size: 21px;
 }
 
-.contact-line p,
+.contact-line span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #999;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.5px;
+}
+
+.contact-line p {
+  margin: 0;
+
+  color: #ddd;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
 .contact-line a {
-  color: #bcb7ad;
-  font-size: 0.9rem;
-  line-height: 1.7
+  color: #ddd;
+
+  font-size: 14px;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
 }
 
 .contact-line a:hover {
-  color: var(--gold-light)
+  color: goldenrod;
 }
 
+
+/* ==========================================
+   CONTACT BUTTONS
+   ========================================== */
+
+.contact-buttons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 35px;
+}
+
+.contact-whatsapp-btn {
+  display: inline-flex;
+
+  align-items: center;
+  border-radius: 1rem;
+
+  gap: 8px;
+
+  padding: 13px 25px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.35);
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.contact-whatsapp-btn i {
+  font-size: 18px;
+}
+
+.contact-whatsapp-btn:hover {
+  background: #fff;
+
+  border-color: #fff;
+
+  color: #222;
+}
+
+
+/* ==========================================
+   MAP
+   ========================================== */
+
 .map-box {
-  min-height: 420px;
-  border: 1px solid var(--border);
-  overflow: hidden
+  min-height: 560px;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
+  background: #111;
 }
 
 .map-box iframe {
+  display: block;
+
   width: 100%;
   height: 100%;
-  min-height: 420px;
-  border: 0;
-  filter: grayscale(.25) sepia(.1)
+
+  min-height: 560px;
+
+  filter:
+    grayscale(15%)
+    contrast(95%);
+}
+
+
+/* ==========================================
+   CONTACT CTA
+   ========================================== */
+
+.contact-cta {
+  padding: 110px 7%;
+
+  text-align: center;
+
+  background: #f8f5ef;
+}
+
+.contact-cta h2 {
+  margin: 20px 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(52px, 7vw, 86px);
+
+  font-weight: 500;
+
+  line-height: 0.9;
+
+  color: #222;
+}
+
+.contact-cta h2 em {
+  font-weight: 500;
+}
+
+.contact-cta p {
+  max-width: 600px;
+
+  margin: 0 auto 30px;
+
+  color: #666;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 900px) {
+
+  .page-hero {
+    height: 480px;
+  }
+
+  .page-hero-content {
+    left: 7%;
+    right: 7%;
+  }
+
+
+  .contact-page {
+    padding: 80px 6%;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+
+  .map-box {
+    min-height: 420px;
+  }
+
+  .map-box iframe {
+    min-height: 420px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .page-hero {
+    height: 430px;
+  }
+
+  .page-hero-content h1 {
+    font-size: 58px;
+  }
+
+
+  .contact-page {
+    padding: 65px 6%;
+  }
+
+
+  .contact-card h2 {
+    font-size: 48px;
+  }
+
+
+  .contact-buttons {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .map-box {
+    min-height: 350px;
+  }
+
+  .map-box iframe {
+    min-height: 350px;
+  }
+
+
+  .contact-cta {
+    padding: 75px 6%;
+  }
+
 }
 
 /* FOOTER */
 .daya-footer {
+  margin-top: 1rem;
   position: relative;
   background: radial-gradient(circle at 15% 30%, rgba(216, 168, 62, .06), transparent 30%), #070706;
   color: #f5ead4;
@@ -685,7 +2592,7 @@ button {
   margin: auto;
   padding: 60px 0 45px;
   display: grid;
-  grid-template-columns: 1.7fr 1fr 1fr 1.25fr;
+  grid-template-columns: 1.7fr 1fr 1.25fr;
   gap: 50px
 }
 
@@ -982,27 +2889,6 @@ button {
 
   .about-preview-copy h2 {
     font-size: 48px
-  }
-
-  .testimonial-slider {
-    width: calc(100% - 65px)
-  }
-
-  .testimonial-card {
-    padding: 25px 20px;
-    min-height: 230px
-  }
-
-  .testimonial-card p {
-    font-size: 20px
-  }
-
-  .testimonial-slider>.testimonial-prev {
-    left: -45px
-  }
-
-  .testimonial-slider>.testimonial-next {
-    right: -45px
   }
 
   .gallery-grid {

@@ -1,127 +1,553 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Daya Boutique — timeless ethnic wear for every occasion.">
-<title>Daya Boutique</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-<link
-  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
-  rel="stylesheet"
-/>
-<link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Explore the Daya Boutique gallery featuring elegant ethnic wear, contemporary styles and timeless fashion for women."
+  >
+
+  <title>Gallery | Daya Boutique</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Remix Icons -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+    rel="stylesheet"
+  >
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../style.css">
+
 </head>
 
 <body>
 
-<header class="site-header">
-  <nav class="navbar container">
-    <a class="brand" href="/">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 70 70">
-          <path d="M35 6C26 16 24 24 35 35C46 24 44 16 35 6Z"/>
-          <path d="M35 35C21 24 12 26 7 36C17 43 26 43 35 35Z"/>
-          <path d="M35 35C49 24 58 26 63 36C53 43 44 43 35 35Z"/>
-          <path d="M35 35C23 36 17 43 18 55C28 52 34 46 35 35Z"/>
-          <path d="M35 35C47 36 53 43 52 55C42 52 36 46 35 35Z"/>
-          <path d="M35 35V62"/>
-        </svg>
-      </span>
-      <span class="brand-copy"><strong>Daya</strong><small>BOUTIQUE</small></span>
-    </a>
+  <!-- ================= HEADER ================= -->
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+  <header class="site-header">
 
-    <div class="nav-links" id="navLinks">
-      <a class="nav-link " href="/">Home</a>
-      <a class="nav-link active" href="gallery.html">Gallery</a>
-      <a class="nav-link " href="../about/about.html">About</a>
-      <a class="nav-link " href="../contact/contact.html">Contact</a>
-    </div>
-  </nav>
-</header>
+    <nav class="navbar container">
 
-<main>
-<section class="page-hero">
-  <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=1800&q=88" alt="Daya Boutique collection">
-  <div class="page-hero-content container"><span class="eyebrow">Daya Boutique</span><h1>Our Gallery</h1></div>
-</section>
-<section class="full-gallery section-dark">
-  <div class="section-heading"><span class="heading-line"></span><div><span class="eyebrow">Explore the collection</span><h2>Timeless Pieces</h2></div><span class="heading-line"></span></div>
-  <div class="gallery-grid">
-    <figure><img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=85" alt="Black and gold saree"></figure>
-    <figure><img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=900&q=85" alt="Red ethnic outfit"></figure>
-    <figure><img src="https://images.unsplash.com/photo-1605581494291-317cf1f77ddf?q=80&w=434&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Black ethnic outfit"></figure>
-    <figure><img src="https://images.unsplash.com/photo-1738310196488-999e94621ff1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D" alt="Festive dress"></figure>
-    <figure><img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=85" alt="Traditional fashion"></figure>
-    <figure><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=85" alt="Elegant fashion"></figure>
-  </div>
-</section>
-</main>
+      <a class="brand" href="../index.html">
 
-<footer class="daya-footer">
-  <div class="footer-container">
-    <div>
-      <a class="footer-logo" href="/">
-        <span class="footer-logo-icon">✿</span>
-        <span class="footer-logo-text"><strong>Daya</strong><small>BOUTIQUE</small></span>
+        <span class="brand-mark" aria-hidden="true">
+          <img
+            src="../images/daya_boutique_logo.jpeg"
+            alt="Daya Boutique logo"
+          >
+        </span>
+
+        <span class="brand-copy">
+          <strong>DAYA</strong>
+          <small>BOUTIQUE</small>
+        </span>
+
       </a>
-      <p class="footer-description">
-        Timeless ethnic elegance, thoughtfully curated for every celebration,
-        occasion and unforgettable moment.
-      </p>
-      <div class="footer-socials">
-        <a href="https://www.instagram.com/daya_boutique_" aria-label="Instagram"><i class="ri-instagram-line" style="font-size: 1rem; color: goldenrod"></i></a>
-        <a href="https://www.facebook.com/ethanicwear" aria-label="Facebook"><i class="ri-facebook-fill" style="font-size: 1rem; color: goldenrod;"></i></a>
-        <a href="https://wa.me/9033023850" aria-label="WhatsApp"><i class="ri-whatsapp-line" style="font-size: 1rem; color: goldenrod;"></i></a>
-        <a href="https://share.google/9F2yXRU8Wymvn08DI" aria-label="Google"><i class="ri-google-fill" style="font-size: 1rem; color: goldenrod;"></i></a>
+
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+
+      <div class="nav-links" id="navLinks">
+
+        <a class="nav-link" href="../index.html">
+          Home
+        </a>
+
+        <a class="nav-link active" href="gallery.html">
+          Gallery
+        </a>
+
+        <a class="nav-link" href="../about/about.html">
+          About
+        </a>
+
+        <a class="nav-link" href="../contact/contact.html">
+          Contact
+        </a>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="gallery-hero">
+
+      <img
+        src="../images/daya_boutique_exterior2.jpeg"
+        alt="Daya Boutique fashion collection"
+      >
+
+      <div class="gallery-hero-overlay"></div>
+
+      <div class="gallery-hero-content container">
+
+        <span class="eyebrow">
+          Daya Boutique
+        </span>
+
+        <h1>
+          Our Gallery
+        </h1>
+
+        <p>
+          Discover elegant styles, beautiful fabrics and thoughtfully
+          curated fashion designed for every occasion.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= INTRODUCTION ================= -->
+
+    <section class="gallery-intro section-dark">
+
+      <div class="gallery-intro-container">
+
+        <div class="gallery-intro-heading">
+
+          <span class="eyebrow">
+            Explore Our Collection
+          </span>
+
+          <h2>
+            Timeless Style,<br>
+            Beautifully Curated
+          </h2>
+
+        </div>
+
+
+        <div class="gallery-intro-content">
+
+          <p>
+            At Daya Boutique, our collection brings together comfort,
+            quality and contemporary style for the modern woman.
+          </p>
+
+          <p>
+            Explore our gallery to discover the styles and collections
+            available at our boutique.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= COLLECTIONS ================= -->
+
+    <section class="gallery-collections section-dark">
+
+      <div class="gallery-section-heading">
+
+        <span class="heading-line"></span>
+
+        <div>
+
+          <span class="eyebrow">
+            Our Collections
+          </span>
+
+          <h2>
+            Discover Your Style
+          </h2>
+
+        </div>
+
+        <span class="heading-line"></span>
+
+      </div>
+
+
+      <div class="gallery-grid">
+
+
+        <!-- CATEGORY 1 -->
+
+        <figure class="gallery-category">
+
+          <img
+            src="../images/daya_boutique_interior2.jpeg"
+            alt="Sarees collection"
+            loading="lazy"
+          >
+
+          <div class="category-overlay">
+
+            <div class="category-content">
+
+              <span class="category-number">
+                01
+              </span>
+
+              <h3>
+                Ethnic Set
+              </h3>
+
+              <p>
+                Elegant styles for every occasion
+              </p>
+
+            </div>
+
+          </div>
+
+        </figure>
+
+
+        <!-- CATEGORY 2 -->
+
+        <figure class="gallery-category">
+
+          <img
+            src="../images/daya_boutique_interior1.jpeg"
+            alt="Lehengas collection"
+            loading="lazy"
+          >
+
+          <div class="category-overlay">
+
+            <div class="category-content">
+
+              <span class="category-number">
+                02
+              </span>
+
+              <h3>
+                Indo-Western
+              </h3>
+
+              <p>
+                Beautiful festive silhouettes
+              </p>
+
+            </div>
+
+          </div>
+
+        </figure>
+
+
+        <!-- CATEGORY 3 -->
+
+        <figure class="gallery-category">
+
+          <img
+            src="https://images.unsplash.com/photo-1605581494291-317cf1f77ddf?auto=format&fit=crop&w=900&q=85"
+            alt="Ethnic suits collection"
+            loading="lazy"
+          >
+
+          <div class="category-overlay">
+
+            <div class="category-content">
+
+              <span class="category-number">
+                03
+              </span>
+
+              <h3>
+                Kurti
+              </h3>
+
+              <p>
+                Comfortable and graceful everyday styles
+              </p>
+
+            </div>
+
+          </div>
+
+        </figure>
+
+
+        <!-- CATEGORY 4 -->
+
+        <figure class="gallery-category">
+
+          <img
+            src="https://images.unsplash.com/photo-1738310196488-999e94621ff1?auto=format&fit=crop&w=900&q=85"
+            alt="Festive wear collection"
+            loading="lazy"
+          >
+
+          <div class="category-overlay">
+
+            <div class="category-content">
+
+              <span class="category-number">
+                04
+              </span>
+
+              <h3>
+                Co-ord Set
+              </h3>
+
+              <p>
+                Styles made for celebrations
+              </p>
+
+            </div>
+
+          </div>
+
+        </figure>
+
+
+        <!-- CATEGORY 5 -->
+
+        <figure class="gallery-category">
+
+          <img
+            src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=900&q=85"
+            alt="Traditional wear collection"
+            loading="lazy"
+          >
+
+          <div class="category-overlay">
+
+            <div class="category-content">
+
+              <span class="category-number">
+                05
+              </span>
+
+              <h3>
+                Anarkali
+              </h3>
+
+              <p>
+                Classic Indian elegance
+              </p>
+
+            </div>
+
+          </div>
+
+        </figure>
+
+
+        <!-- CATEGORY 6 -->
+
+        <figure class="gallery-category">
+
+          <img
+            src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=85"
+            alt="Elegant women's fashion"
+            loading="lazy"
+          >
+
+          <div class="category-overlay">
+
+            <div class="category-content">
+
+              <span class="category-number">
+                06
+              </span>
+
+              <h3>
+                Dress
+              </h3>
+
+              <p>
+                Contemporary looks for modern women
+              </p>
+
+            </div>
+
+          </div>
+
+        </figure>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= EXPERIENCE ================= -->
+
+    <section class="gallery-experience section-dark">
+
+      <div class="gallery-experience-container">
+
+        <div class="gallery-experience-image">
+
+          <img
+            src="../images/daya_boutique_interior5.jpeg"
+            alt="Daya Boutique interior"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="gallery-experience-content">
+
+          <span class="eyebrow">
+            The Daya Experience
+          </span>
+
+          <h2>
+            See It.<br>
+            Feel It.<br>
+            Make It Yours.
+          </h2>
+
+          <p>
+            Visit Daya Boutique and explore our collection in person.
+            Our boutique brings together a comfortable shopping
+            experience with styles selected for today's modern woman.
+          </p>
+
+          <a
+            href="../contact/contact.html"
+            class="gallery-experience-btn"
+          >
+            Visit Our Boutique
+            <i class="ri-arrow-right-line"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="gallery-cta">
+
+      <div class="gallery-cta-content">
+
+        <span class="eyebrow">
+          Visit Daya Boutique
+        </span>
+
+        <h2>
+          Find Something<br>
+          That Feels Like You
+        </h2>
+
+        <p>
+          Explore our collection in person and discover your next
+          favourite style.
+        </p>
+
+        <a
+          href="../contact/contact.html"
+          class="gallery-cta-btn"
+        >
+          Contact Us
+          <i class="ri-arrow-right-line"></i>
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="daya-footer">
+    <div class="footer-container">
+      <div>
+        <a class="footer-logo" href="/">
+          <span class="footer-logo-icon">✿</span>
+          <span class="footer-logo-text"><strong>Daya</strong><small>BOUTIQUE</small></span>
+        </a>
+        <p class="footer-description">
+          Timeless ethnic elegance, thoughtfully curated for every celebration,
+          occasion and unforgettable moment.
+        </p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/daya_boutique_" aria-label="Instagram"><i class="ri-instagram-line"
+              style="font-size: 1rem; color: goldenrod"></i></a>
+          <a href="https://www.facebook.com/ethanicwear" aria-label="Facebook"><i class="ri-facebook-fill"
+              style="font-size: 1rem; color: goldenrod;"></i></a>
+          <a href="https://wa.me/9033023850" aria-label="WhatsApp"><i class="ri-whatsapp-line"
+              style="font-size: 1rem; color: goldenrod;"></i></a>
+          <a href="https://share.google/9F2yXRU8Wymvn08DI" aria-label="Google"><i class="ri-google-fill"
+              style="font-size: 1rem; color: goldenrod;"></i></a>
+        </div>
+      </div>
+
+
+      <div class="footer-column">
+        <h3>Collections</h3>
+        <ul>
+          <li><a href="../gallery/gallery.html">Dress</a></li>
+          <li><a href="../gallery/gallery.html">Indo-Western</a></li>
+          <li><a href="../gallery/gallery.html">Ethnic Sets</a></li>
+          <li><a href="../gallery/gallery.html">Anarkali</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Visit Daya</h3>
+        <div class="contact-item"><i class="ri-map-pin-line"
+            style="font-size: 1.3rem; text-align: center; color: goldenrod;"></i>
+          <p>FF-4 krishna palace , opp Gopal tower, Maninagar, Ahmedabad. 380008 Gujarat.</p>
+        </div>
+        <div class="contact-item"><i class="ri-phone-fill"
+            style="font-size: 1.3rem; text-align: center; color: goldenrod;"></i><a href="tel:+919033023850">+91 9033023850</a></div>
+        <div class="contact-item"><i class="ri-mail-send-fill"
+            style="font-size: 1.3rem; text-align: center; color: goldenrod;"></i><a
+            href="mailto:dayaboutiquee@gmail.com">dayaboutiquee@gmail.com</a></div>
+        <div class="contact-item"><i class="ri-user-3-fill"
+            style="font-size: 1.3rem; text-align: center; color: goldenrod;"></i><a
+            href="mailto:hello@dayaboutique.com">Owned By:- Rohit Jitendra Mulchandani</a></div>
       </div>
     </div>
 
-    <div class="footer-column">
-      <h3>Explore</h3>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/gallery/">Our Gallery</a></li>
-        <li><a href="/about/">About Us</a></li>
-        <li><a href="/contact/">Contact</a></li>
-      </ul>
+    <div class="footer-divider"><span>✦</span></div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Daya Boutique. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="../terms/terms.html">Privacy Policy</a><span>•</span><a href="../terms/terms.html">Terms &amp; Conditions</a>
+      </div>
     </div>
-
-    <div class="footer-column">
-      <h3>Collections</h3>
-      <ul>
-        <li><a href="/gallery/">Sarees</a></li>
-        <li><a href="/gallery/">Lehengas</a></li>
-        <li><a href="/gallery/">Ethnic Suits</a></li>
-        <li><a href="/gallery/">Festive Wear</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-contact">
-      <h3>Visit Daya</h3>
-      <div class="contact-item"><i class="ri-map-pin-line" style="font-size: 1.3rem; text-align: center; color: goldenrod;"></i><p>G-2, Shilp Complex,Vallabh Vidyanagar,Anand, Gujarat</p></div>
-      <div class="contact-item"><i class="ri-phone-fill" style="font-size: 1.3rem; text-align: center; color: goldenrod;"></i><a href="tel:+919999999999">+91 99999 99999</a></div>
-      <div class="contact-item"><i class="ri-mail-send-fill" style="font-size: 1.3rem; text-align: center; color: goldenrod;"></i><a href="mailto:hello@dayaboutique.com">hello@dayaboutique.com</a></div>
-    </div>
-  </div>
-
-  <div class="footer-divider"><span>✦</span></div>
-
-  <div class="footer-bottom">
-    <p>© 2026 Daya Boutique. All rights reserved.</p>
-    <div class="footer-bottom-links">
-      <a href="#">Privacy Policy</a><span>•</span><a href="#">Terms &amp; Conditions</a>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 
-<script src="/script.js"></script>
+  <!-- Main JS -->
+
+  <script src="../script.js"></script>
+
 </body>
 </html>
